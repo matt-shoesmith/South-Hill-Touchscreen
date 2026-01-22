@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>South Hill on Madison</title>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript" src="js/swfaddress.js"></script>
+<script type="text/javascript">
+	var params = {
+		quality: "high",
+		scale: "noscale",
+		wmode: "window",
+		allowscriptaccess: "always",
+		bgcolor: "#000000"
+	};
+	var attributes = {
+		id: "flashcontent",
+		name: "flashcontent"
+	};
+	swfobject.embedSWF("index.swf", "flashcontent", "100%", "100%", "10.0.0", "expressInstall.swf", params, attributes);
+</script>
+<style type="text/css">
+	/*hide from ie on mac\*/
+	
+	/* end hide */
+	html, body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: #000000;
+	}
+	#container { width:1000px; text-align:left; }
+</style>
+
+</head>
+<body>
+	
+<div id="container">
+	<div id="content">
+		<script language="javascript">
+				function getViewportSize() { 
+					var size = [0, 0]; 
+					if (typeof window.innerWidth != "undefined") { 
+						size = [window.innerWidth, window.innerHeight];
+					} 
+					else if (typeof document.documentElement != "undefined" && typeof document.documentElement.clientWidth != "undefined" && document.documentElement.clientWidth != 0) {
+						size = [document.documentElement.clientWidth, document.documentElement.clientHeight]; 
+					}
+					else {
+						size = [document.getElementsByTagName("body")[0].clientWidth, document.getElementsByTagName("body")[0].clientHeight]; 
+					}
+					return size; 
+				}
+				
+				function createFullBrowserFlash() {
+					//swfobject.createCSS("html", "height:100%;");
+					//swfobject.createCSS("body", "height:100%;");
+					swfobject.createCSS("#container", "margin:0; width:100%; height:100%; min-width:1000px; min-height:700px;");
+					window.onresize = function() {
+						var el = document.getElementById("container");
+						var size = getViewportSize(); 
+						el.style.width = size[0] < 1000 ? "1000px" : "100%";
+						el.style.height = size[1] < 700 ? "700px" : "100%";
+					};
+					window.onresize();
+				}
+				
+				swfobject.addDomLoadEvent(createFullBrowserFlash);
+		</script>
+		<noscript>
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="100%" height="100%" id="index" align="middle">
+			<param name="allowScriptAccess" value="sameDomain" />
+			<param name="allowFullScreen" value="false" />
+			<param name="wmode" value="transparent" />
+			<param name="movie" value="index.swf" /><param name="quality" value="high" /><param name="scale" value="noscale" /><param name="salign" value="t" /><param name="bgcolor" value="#FFFFFF" />	<embed src="index.swf" quality="high" scale="noscale" salign="t" bgcolor="#FFFFFF" width="100%" height="100%" name="index" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+			</object>
+		</noscript>
+	</div>
+
+	<div id="flashcontent">
+		<!--SEO-->
+		<div id="noflash">
+			<p><strong>You need to upgrade your Flash Player</strong></p>
+			<p>This is replaced by the Flash content.</p>
+			<p>Place your alternate content here and users without the Flash plugin or with 
+			Javascript turned off will see this. Content here allows you to leave out <code>noscript</code> 
+			tags. Include a link to <a href="index.html?detectflash=false">bypass the detection</a> if you wish.</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
